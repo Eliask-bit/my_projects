@@ -45,7 +45,8 @@ CREATE TABLE `layoffs_staging2` (
   `date` text,
   `stage` text,
   `country` text,
-  `funds_raised_millions` int DEFAULT NULL,`row_num`INT
+  `funds_raised_millions` int DEFAULT NULL,
+  `row_num`INT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 SELECT *
@@ -91,7 +92,7 @@ FROM layoffs_staging2
 ORDER BY 1;
  
 UPDATE layoffs_staging2
-SET country =TRIM(TRAILING '.' FROM country)
+SET country =TRIM(TRAILING '.' FROM country) 
 WHERE country LIKE 'united states%';
 
 SELECT `date`
